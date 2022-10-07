@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import {
+  Background,
+  Box,
+  ButtonText,
+  StyledButton,
+  StyledH1,
+  TextContainer,
+  Title,
+} from "./styles";
 
 function App() {
+  const [data, setData] = useState();
+  useEffect(() => {
+    const getData = () => {
+      axios.get("https://catfact.ninja/fact").then((res) => {
+        setData(res.data.fact);
+      });
+    };
+    getData();
+  }, []);
+  const Reload = () => {
+    window.location.reload();
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Background>
+        <Title>
+          <ButtonText>Cat Facts</ButtonText>
+        </Title>
+        <TextContainer>
+          <StyledH1>{data}</StyledH1>
+        </TextContainer>
+        <StyledButton onClick={Reload}>
+          <ButtonText>Get New Fact</ButtonText>
+        </StyledButton>
+      </Background>
+    </Box>
   );
 }
 
