@@ -75,7 +75,7 @@ export const Title = styled.div`
 
 export const TextContainer = styled.div`
   width: 40%;
-  margin: 10% auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column-reverse;
   text-align: center;
