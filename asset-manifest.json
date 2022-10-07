@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/CatFact/static/js/main.811837d0.js",
+    "main.js": "/CatFact/static/js/main.ac393fbf.js",
     "static/media/paw.webp": "/CatFact/static/media/paw.11970d9f2d4324cc0f43.webp",
     "index.html": "/CatFact/index.html",
-    "main.811837d0.js.map": "/CatFact/static/js/main.811837d0.js.map"
+    "main.ac393fbf.js.map": "/CatFact/static/js/main.ac393fbf.js.map"
   },
   "entrypoints": [
-    "static/js/main.811837d0.js"
+    "static/js/main.ac393fbf.js"
   ]
 }
