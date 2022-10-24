@@ -92,13 +92,14 @@ export const StyledButton = styled.button`
   width: 100%;
   background-color: orange;
   border: 0;
+  border-top: 3px solid blue;
   margin: 0 auto;
   padding: 1rem;
+  cursor: pointer;
   @media (max-width: 768px) {
     margin: 0;
     padding: 1rem;
     width: 100%;
-    border-top: 3px solid blue;
   }
 `;
 
@@ -117,7 +118,6 @@ export const ButtonText = styled.h1`
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-  cursor: pointer;
 `;
 
 export const SourceText = styled.a`
