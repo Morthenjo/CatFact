@@ -36,8 +36,7 @@ export const Box = styled.div`
 `;
 
 export const Background = styled.div`
-  background: url("https://source.unsplash.com/random/?cat") center center
-    no-repeat;
+  background: url(${(props) => props.cat}) center center no-repeat;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -103,10 +102,29 @@ export const StyledButton = styled.button`
   }
 `;
 
+export const SourceButton = styled.div`
+  width: 5rem;
+  background-color: orange;
+  border: 3px solid blue;
+  border-bottom: 0;
+  margin: 0;
+  text-align: center;
+  @media (max-width: 768px) {
+  }
+`;
+
 export const ButtonText = styled.h1`
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+  cursor: pointer;
+`;
+
+export const SourceText = styled.a`
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  cursor: pointer;
 `;
 
 export const Empty = styled.div`
