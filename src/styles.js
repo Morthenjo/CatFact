@@ -65,7 +65,7 @@ export const Title = styled.div`
   margin: 0;
   text-align: center;
   width: 100%;
-  background-color: red;
+  background-color: rgba(128, 128, 128, 0.4);
   font-size: 1.5rem;
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -91,7 +91,7 @@ export const TextContainer = styled.div`
 
 export const StyledButton = styled.button`
   width: 100%;
-  background-color: orange;
+  background-color: rgba(255, 165, 0, 0.4);
   border: 0;
   border-top: 3px solid blue;
   margin: 0 auto;
@@ -106,7 +106,7 @@ export const StyledButton = styled.button`
 
 export const SourceButton = styled.div`
   width: 20rem;
-  background-color: orange;
+  background-color: rgba(255, 165, 0, 0.4);
   border: 3px solid blue;
   border-bottom: 0;
   margin: 0;

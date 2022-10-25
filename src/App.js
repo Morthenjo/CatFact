@@ -34,7 +34,7 @@ function App() {
       });
       axios
         .get(
-          `https://api.unsplash.com/photos/random?query=cat&client_id=${API_KEY}`
+          `https://api.unsplash.com/photos/random?query=cat&auto=format&client_id=${API_KEY}`
         )
         .then((res) => {
           setUnsplash((prevUnsplash) => {
