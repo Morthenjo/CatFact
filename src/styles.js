@@ -25,6 +25,7 @@ export const Box = styled.div`
   overflow: hidden;
   flex-direction: column;
   background-size: cover;
+  transition: all 0.4s;
   @media (max-width: 768px) {
     margin: 1rem auto;
   }
@@ -104,13 +105,14 @@ export const StyledButton = styled.button`
 `;
 
 export const SourceButton = styled.div`
-  width: 5rem;
+  width: 20rem;
   background-color: orange;
   border: 3px solid blue;
   border-bottom: 0;
   margin: 0;
   text-align: center;
-  @media (max-width: 768px) {
+  display: flex;
+  @media (max-width: 550px) {
   }
 `;
 
@@ -121,6 +123,7 @@ export const ButtonText = styled.h1`
 `;
 
 export const SourceText = styled.a`
+  margin: auto;
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -132,4 +135,10 @@ export const Empty = styled.div`
   @media (min-width: 769px) {
     display: none;
   }
+`;
+
+export const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
