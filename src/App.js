@@ -4,9 +4,6 @@ import {
   Background,
   Box,
   ButtonText,
-  FlexRow,
-  SourceButton,
-  SourceText,
   StyledButton,
   StyledH1,
   TextContainer,
@@ -15,44 +12,20 @@ import {
 
 function App() {
   const [data, setData] = useState();
-  const [count, setCount] = useState(0);
-  const [unsplash, setUnsplash] = useState({
-    catImg: "",
-    catSource: "",
-    author: "",
-    authorSource: "",
-  });
-  const Stuff = () => {
-    setCount((prev) => prev + 1);
-  };
-
+  function reload() {
+    window.location.reload();
+  }
   useEffect(() => {
-    const API_KEY = `${process.env.REACT_APP_UNSPLASH_API_KEY}`;
     const getData = () => {
       axios.get("https://catfact.ninja/fact").then((res) => {
         setData(res.data.fact);
       });
-      axios
-        .get(
-          `https://api.unsplash.com/photos/random?query=cat&auto=format&client_id=${API_KEY}`
-        )
-        .then((res) => {
-          setUnsplash((prevUnsplash) => {
-            return {
-              ...prevUnsplash,
-              catImg: res.data.urls.full,
-              catSource: res.data.links.html,
-              author: res.data.user.name,
-              authorSource: res.data.user.links.html,
-            };
-          });
-        });
     };
     getData();
-  }, [count]);
+  }, []);
   return (
     <Box>
-      <Background cat={unsplash.catImg}>
+      <Background cat="https://source.unsplash.com/random/?cat">
         <Title>
           <ButtonText>Cat Facts</ButtonText>
         </Title>
@@ -60,27 +33,7 @@ function App() {
           <StyledH1>{data}</StyledH1>
         </TextContainer>
         <div>
-          <FlexRow>
-            <SourceButton>
-              <SourceText
-                href={unsplash.authorSource}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Image by <b>{unsplash.author}</b> on Unsplash
-              </SourceText>
-            </SourceButton>
-            <SourceButton>
-              <SourceText
-                href={unsplash.catSource}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Source
-              </SourceText>
-            </SourceButton>
-          </FlexRow>
-          <StyledButton onClick={Stuff}>
+          <StyledButton onClick={reload}>
             <ButtonText>Get New Fact</ButtonText>
           </StyledButton>
         </div>
