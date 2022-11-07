@@ -25,7 +25,7 @@ function App() {
   }, []);
   return (
     <Box>
-      <Background cat="https://source.unsplash.com/random/?cat">
+      <Background cat="https://source.unsplash.com/random/?cat&auto=format">
         <Title>
           <ButtonText>Cat Facts</ButtonText>
         </Title>
