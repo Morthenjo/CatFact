@@ -21,6 +21,7 @@ function App() {
     catSource: "",
     author: "",
     authorSource: "",
+    error: "",
   });
   const Stuff = () => {
     setCount((prev) => prev + 1);
@@ -44,6 +45,20 @@ function App() {
               catSource: res.data.links.html,
               author: res.data.user.name,
               authorSource: res.data.user.links.html,
+              error: "",
+            };
+          });
+        })
+        .catch((err) => {
+          setUnsplash((prevUnsplash) => {
+            return {
+              ...prevUnsplash,
+              catImg:
+                "https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1229&q=80",
+              catSource: "https://unsplash.com/photos/NodtnCsLdTE",
+              author: "Mikhail Vasilyev",
+              authorSource: "https://unsplash.com/@miklevasilyev",
+              error: "Can't get random image",
             };
           });
         });
@@ -55,6 +70,7 @@ function App() {
       <Background cat={unsplash.catImg}>
         <Title>
           <ButtonText>Cat Facts</ButtonText>
+          <h4>{unsplash.error}</h4>
         </Title>
         <TextContainer>
           <StyledH1>{data}</StyledH1>
