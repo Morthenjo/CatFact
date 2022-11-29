@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import {
   Background,
+  Blur,
   Box,
   ButtonText,
   FlexRow,
@@ -72,6 +73,7 @@ function App() {
   }, [count]);
   return (
     <Box>
+      <Blur />
       <Background cat={unsplash.catImg}>
         <Title>
           <ButtonText>Cat Facts</ButtonText>

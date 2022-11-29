@@ -17,23 +17,15 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const Box = styled.div`
-  width: 90%;
-  height: 90vh;
-  margin: 2rem auto;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
   display: flex;
   padding: 0;
   overflow: hidden;
   flex-direction: column;
   background-size: cover;
   transition: all 0.4s;
-  @media (max-width: 768px) {
-    margin: 1rem auto;
-  }
-  @media (max-width: 425px) {
-    width: 100%;
-    margin: 0;
-    height: 100vh;
-  }
 `;
 
 export const Background = styled.div`
@@ -41,12 +33,13 @@ export const Background = styled.div`
   width: 100%;
   height: 100%;
   background-size: cover;
+  border: 2px solid teal;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   @media (min-width: 789px) {
-    border-radius: 0 0 1rem 1rem;
-    background-size: fill;
+    /* border-radius: 0 0 1rem 1rem; */
+    /* background-size: fill; */
   }
 `;
 
@@ -65,6 +58,7 @@ export const Title = styled.div`
   margin: 0;
   text-align: center;
   width: 100%;
+  border-bottom: 2px solid teal;
   background-color: rgba(128, 128, 128, 0.4);
   font-size: 1.5rem;
   @media (max-width: 768px) {
@@ -93,7 +87,7 @@ export const StyledButton = styled.button`
   width: 100%;
   background-color: rgba(255, 165, 0, 0.4);
   border: 0;
-  border-top: 3px solid blue;
+  border-top: 2px solid teal;
   margin: 0 auto;
   padding: 1rem;
   cursor: pointer;
@@ -106,9 +100,8 @@ export const StyledButton = styled.button`
 
 export const SourceButton = styled.div`
   width: 20rem;
-  background-color: rgba(255, 165, 0, 0.4);
-  border: 3px solid blue;
-  border-bottom: 0;
+  /* background-color: rgba(255, 165, 0, 0.4); */
+  /* border: 3px solid blue; */
   margin: 0;
   text-align: center;
   display: flex;
@@ -141,4 +134,12 @@ export const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+`;
+
+export const Blur = styled.div`
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
 `;
