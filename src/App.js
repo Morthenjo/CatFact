@@ -30,9 +30,14 @@ function App() {
   useEffect(() => {
     const API_KEY = `${process.env.REACT_APP_UNSPLASH_API_KEY}`;
     const getData = () => {
-      axios.get("https://catfact.ninja/fact").then((res) => {
-        setData(res.data.fact);
-      });
+      axios
+        .get("https://catfact.ninja/fact")
+        .then((res) => {
+          setData(res.data.fact);
+        })
+        .catch(() => {
+          setData("ERROR");
+        });
       axios
         .get(
           `https://api.unsplash.com/photos/random?query=cat&auto=format&client_id=${API_KEY}`
